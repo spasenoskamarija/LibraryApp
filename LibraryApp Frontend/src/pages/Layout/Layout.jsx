@@ -1,0 +1,19 @@
+import React from 'react';
+import {Box, Container} from "@mui/material";
+import Header from "../Layout/Header/Header.jsx"
+import {Outlet} from "react-router";
+import "./Layout.css";
+
+const Layout = () => {
+    return (
+        <Box className="layout-box">
+            <Header/>
+            <Container className="outlet-container" sx={{my: 2}} maxWidth="lg">
+                <Outlet/>
+            </Container>
+        </Box>
+    );
+};
+
+
+export default Layout;
