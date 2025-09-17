@@ -16,6 +16,9 @@ const authorsRepository = {
     delete: async (id) => {
         return await axiosInstance.delete(`/authors/delete/${id}`);
     },
+    by_country: async () => {
+        return await axiosInstance.get("/authors/by-country")
+    }
 };
 
 export default authorsRepository;

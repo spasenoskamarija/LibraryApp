@@ -20,6 +20,7 @@ const EditBookDialog = ({open, onClose, book, onEdit }) => {
     });
 
     const { authors = [], loading } = useAuthor();
+
     const categories = [
         "NOVEL",
         "THRILLER",
@@ -29,6 +30,7 @@ const EditBookDialog = ({open, onClose, book, onEdit }) => {
         "CLASSICS",
         "DRAMA"
     ];
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });

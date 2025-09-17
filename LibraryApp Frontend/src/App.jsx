@@ -4,6 +4,8 @@ import Layout from "./pages/Layout/Layout.jsx";
 import AuthorsPage from "./pages/AuthorsPage/AuthorsPage.jsx";
 import CountriesPage from "./pages/CountriesPage/CountriesPage.jsx"
 import HomePage from "./pages/HomePage/HomePage.jsx";
+import StatisticsPage from "./pages/StatisticsPage/StatisticsPage.jsx";
+import WishlistPage from "./pages/WishlistPage/WishlistPage.jsx";
 
 const App = () => {
     return (
@@ -14,6 +16,8 @@ const App = () => {
                     <Route path="countries" element={<CountriesPage/>}/>
                     <Route path="authors" element={<AuthorsPage/>}/>
                     <Route path="books" element={<BooksPage />}/>
+                    <Route path="statistics" element={<StatisticsPage />}/>
+                    <Route path="wishlist" element={<WishlistPage username="andrej13" />} />
                 </Route>
             </Routes>
         </BrowserRouter>

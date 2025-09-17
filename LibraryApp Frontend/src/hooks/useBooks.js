@@ -13,6 +13,7 @@ const useBooks = () => {
         booksRepository.findAll()
             .then((response)=>{
                 setState({
+                    // koga ke dojde odgovor od backend togas datata od responsot ke se stavi vo books
                     "books":response.data,
                     "loading":false,
                 })

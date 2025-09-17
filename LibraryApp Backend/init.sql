@@ -18,7 +18,9 @@ CREATE TABLE book (
          name VARCHAR(255),
          category VARCHAR(50),
          author_id BIGINT REFERENCES author ON DELETE SET NULL,
-         available_copies INT
+         available_copies INT,
+         description VARCHAR(1000),
+         coverURL VARCHAR(500)
 );
 
 -- User

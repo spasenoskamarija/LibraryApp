@@ -1,46 +1,68 @@
 import React from 'react';
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import "./Header.css";
 
 const pages = [
-    { path: "/", name: "home" },
-    { path: "/books", name: "books" },
-    { path: "/authors", name: "authors" },
-    { path: "/countries", name: "countries" },
+    { path: "/", name: "Home" },
+    { path: "/books", name: "Books" },
+    { path: "/authors", name: "Authors" },
+    { path: "/countries", name: "Countries" },
 ];
 
 const Header = () => {
     return (
-        <Box>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
-                    >
+        <AppBar position="static" >
+            <Toolbar sx={{ justifyContent: "space-between" }}>
+                {/* Logo and title */}
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <IconButton size="large" edge="start" color="inherit" sx={{ mr: 2 }}>
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ mr: 3 }}>
-                        E-SHOP
+                    <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                        LibraryApp
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                        {pages.map((page) => (
-                            <Link key={page.name} to={page.path} style={{ textDecoration: "none" }}>
-                                <Button sx={{ my: 2, color: "white", display: "block" }}>
-                                    {page.name}
-                                </Button>
-                            </Link>
-                        ))}
-                    </Box>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
-            </AppBar>
-        </Box>
+                </Box>
+
+                {/* Navigation links */}
+                <Box sx={{ display: "flex", gap: 2 }}>
+                    {pages.map((page) => (
+                        <Button
+                            key={page.name}
+                            component={Link}
+                            to={page.path}
+                            sx={{
+                                color: "white",
+                                textTransform: "capitalize",
+                                fontSize: "1.1rem",
+                                "&:hover": {
+                                    backgroundColor: "#152c9e",
+                                    color: "#fff"
+                                }
+                            }}
+                        >
+                            {page.name}
+                        </Button>
+                    ))}
+                </Box>
+
+                {/* Login */}
+                <Button
+                    variant="outlined"
+                    color="inherit"
+                    sx={{
+                        borderColor: "#F0F0F0",
+                        color: "#F0F0F0",
+                        "&:hover": {
+                            backgroundColor: "#B38B59",
+                            borderColor: "#B38B59"
+                        }
+                    }}
+                >
+                    Login
+                </Button>
+            </Toolbar>
+        </AppBar>
     );
 };
 

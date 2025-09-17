@@ -6,7 +6,6 @@ import {Box, Button, Card, CardActions, CardContent, Typography} from "@mui/mate
 import EditAuthorDialog from "../EditAuthorDialog/EditAuthorDialog.jsx"
 import DeleteAuthorDialog from "../DeleteAuthorDialog/DeleteAuthorDialog.jsx"
 
-import {useNavigate} from "react-router";
 
 const AuthorCard = ({author,onEdit,onDelete}) => {
 
@@ -19,7 +18,7 @@ const AuthorCard = ({author,onEdit,onDelete}) => {
                 <CardContent>
                     <Typography variant="h5">{author.name}</Typography>
                     <Typography variant="h5">{author.surname}</Typography>
-                    <Typography variant="body1" sx={{textAlign: "right", fontSize: "1.00rem"}}>CountyId: {author.countryId}</Typography>
+                    <Typography variant="body1" sx={{textAlign: "right", fontSize: "1.00rem"}}>County: {author.countryName}</Typography>
                 </CardContent>
                 <CardActions sx={{justifyContent: "space-between"}}>
                     {/*<Button*/}
